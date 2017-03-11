@@ -1,0 +1,250 @@
+@import url("reset.css");
+
+body {
+  background: #f9fdff;
+  background: -moz-linear-gradient(top,  #f9fdff 0%, #fdfeff 49%, #fdffff 50%, #ffffff 100%);
+  background: -webkit-linear-gradient(top,  #f9fdff 0%,#fdfeff 49%,#fdffff 50%,#ffffff 100%);
+  background: linear-gradient(to bottom,  #f9fdff 0%,#fdfeff 49%,#fdffff 50%,#ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fdff', endColorstr='#ffffff',GradientType=0 );
+  font: normal 14px "Arial", sans-serif;
+  color: #333;
+}
+
+html {
+  height: 100%;
+}
+
+header {
+  margin: 0 20px 60px 20px;
+  padding: 0 0 20px 0;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #ebebeb;
+}
+
+header h1 {
+  margin: 40px 0 20px 0;
+  font-size: 20px;
+}
+
+div#output {
+  display: none;
+  width: 700px;
+  margin: 0 auto;
+  padding: 0 0 40px 0;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+div#output #output_p2 {
+  margin-top: 20px;
+}
+
+form {
+  width: 760px;
+  margin: 0 auto;
+}
+
+form h1 {
+  margin-bottom: 20px;
+}
+
+form fieldset {
+  margin-left: 20px;
+}
+
+form ul {
+  margin: 0 20px 28px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+form ul li {
+  padding: 8px 0;
+}
+
+form ul li + li {
+  padding: 8px 0;
+}
+
+form ul li input[type="radio"] {
+  display: inline-block;
+  margin: 0 4px 0 -21px;
+}
+
+form ul li label {
+  display: block;
+  margin-left: 50px;
+}
+
+form ul li p {
+  padding: 6px 0 0 221px;
+}
+
+form div#annualize {
+  text-align: center;
+}
+
+form div#annualize ul li {
+  display: inline-block;
+}
+
+form div#annualize div#period_div {
+  display: none;
+  padding-top: 20px;
+}
+
+form p#instructions {
+  padding: 0 0 16px 0;
+  font-weight: bold;
+}
+
+form p#instructions_cont {
+  padding: 0 0 40px 0;
+  font-weight: bold;
+}
+
+form textarea {
+  margin: 0 8px 20px 8px;
+}
+
+form h2 {
+  padding: 0 0 10px 8px;
+}
+
+form div#inputs {
+  text-align: center;
+}
+
+form div.input {
+  display: inline-block;
+  text-align: left;
+}
+
+form div#input_vols {
+  display: none;
+}
+
+form div#buttons {
+  text-align: center;
+}
+
+.btn {
+  width: 100px;
+  height: 32px;
+  border: none;
+  padding: 4px 15px;
+  margin: 0 20px 40px 20px;
+  border-radius: 2px;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #4285f4;
+  font: 16px "Arial";
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+}
+
+.btn:hover, .btn:focus {
+  background-color: #0b51c5;
+}
+
+div#formula_container {
+  margin: 0 20px;
+  border-top: 1px solid #ebebeb;
+}
+
+section#formulas {
+  width: 700px;
+  margin: 30px auto;
+}
+
+section#formulas h1 {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+section#formulas p {
+  margin-bottom: 20px;
+}
+
+section#formulas img {
+  margin-bottom: 20px;
+}
+
+#modal_layer {
+  display: none;
+  position: fixed;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: background-color 0.4s ease;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  cursor: default;
+}
+
+#modal {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+  max-width: 575px;
+  width: 100%;
+  border: 14px solid #fff;
+  background-color: #ffffff;
+  z-index: 2;
+  box-sizing: border-box;
+  box-shadow: 0 4px 16px rgba(0,0,0,.2);
+}
+
+#modal span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#modal h1 {
+  padding: 14px 0 20px 0;
+  font-size: 16px;
+}
+
+#modal p {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 740px) {
+
+  div#output, form, section#formulas {
+    width: auto;
+  }
+
+  div#output {
+    margin: 0 20px;
+  }
+
+  section#formulas img {
+    width: 85%;
+    height: auto;
+  }
+
+  p#instructions, div#input_type + h1 {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 535px) {
+
+  div#modal {
+    width: 90%;
+  }
+}

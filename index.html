@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Mixed Variance Calculator</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="stylesheets/varcalc.css" />
+    <script src="javascript/jquery-3.1.1.min.js"></script>
+    <script src="javascript/varcalc.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Mixed Variance Calculator</h1>
+      <p>This calculator computes the variance and volatility of a linear combination of variables</p>
+    </header>
+    <main>
+      <div id="output">
+        <p id="output_p1"></p>
+        <p id="output_p2"></p>
+      </div>
+      <form action="" method="get">
+        <fieldset>
+          <div id="input_type">
+            <h1>Select your input data type:</h1>
+            <ul>
+              <li>
+                <label>
+                  <input type="radio" name="input_type" value="series" checked />
+                  A collection of data series and a list of weights for the series
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="input_type" value="covariance" />
+                  A covariance matrix and a list of weights for the variables
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="input_type" value="correlation" />
+                  A correlation matrix, a list of weights for the variables, and a list of standard deviations for the variables
+                </label>
+              </li>
+            </ul>
+          </div>
+          <h1>Specify whether to annualize results (only applicable to time series):</h1>
+          <div id="annualize">
+            <ul>
+              <li>
+                <label>
+                  <input type="radio" name="input_annualize" value="not_annualized" checked />
+                  Not annualized
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="input_annualize" value="annualized" />
+                  Annualized
+                </label>
+              </li>
+              <div id="period_div">
+                <h1>Select data periodicity:</h1>
+                <select name="periodicity" id="periodicity">
+                  <option value="annual">Annual</option>
+                  <option value="semi-annual">Semi-annual</option>
+                  <option value="quarterly">Quarterly</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="daily">Daily</option>
+                </select>
+              </div>
+            </ul>
+          </div>
+          <p id="instructions">Copy data from Excel and paste into the boxes below (numeric values only, no headers).</p>
+          <p id="instructions_cont">If not using Excel, enter data below following this <a href="#">format</a>.</p>
+          <div id="inputs">
+            <div class="input" id="input_data">
+              <h2>Enter data series:</h2>
+              <textarea name="input_data" rows="3" cols="20" wrap="off"></textarea>
+            </div>
+            <div class="input" id="input_weights">
+              <h2>Enter weights:</h2>
+              <textarea name="input_weights" rows="3" cols="20" wrap="off"></textarea>
+            </div>
+            <div class="input" id="input_vols">
+              <h2>Enter standard deviations:</h2>
+              <textarea name="input_vols" rows="3" cols="20" wrap="off"></textarea>
+            </div>
+          </div>
+          <div id="buttons">
+            <input type="submit" value="Calculate" class="btn" id="submit" />
+            <input type="reset" value="Clear" class="btn" id="reset" />
+          </div>
+        </fieldset>
+      </form>
+      <div id="formula_container">
+        <section id="formulas">
+          <h1>Mixed Variance Formula</h1>
+          <p>The variance of a linear combination, or mixed variance, is given by the following formula:</p>
+          <img src="images/formula.png" />
+          <p>where <em>a<sub>i</sub></em> is the weight of each variable <em>X<sub>i</sub></em>.</p>
+        </section>
+      </div>
+    </main>
+    <div id="modal_layer"></div>
+    <div id="modal">
+      <span id="close">x</span>
+      <h1>Input Format</h1>
+      <p>For matrices (i.e., a covariance matrix, a correlation matrix, or a collection of data series), data must be <strong>comma, space, or tab separated</strong>.  Each row must start a <strong>new line</strong>.</p>
+      <p>If entering a collection of data series, enter a matrix with each <strong>column</strong> representing a data series.</p>
+      <p>For lists (i.e., weights or volatilities), data must be <strong>separated by commas, spaces, tabs, or new lines</strong>.</p>
+    </div>
+  </body>
+</html>
