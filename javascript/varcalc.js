@@ -70,7 +70,7 @@ $(function() {
 
     if (mat === "") { return ""; }
 
-    var arr = mat.split("\n");
+    var arr = (mat.trim()).split("\n");
     var row;
     var matrix = [];
 
